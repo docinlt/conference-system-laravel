@@ -2,39 +2,51 @@
 <html lang="lt">
 <head>
     <meta charset="UTF-8">
-    <title>@yield('title') - Conference System</title>
+    <title>@yield('title', 'Konferencijų sistema')</title>
+
+    {{-- AdminLTE CSS (su Bootstrap) --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
+
+    {{-- Tavo kompiliuotas CSS (jei reikia papildomų stilių) --}}
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 </head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
-    <div class="container">
-        <a class="navbar-brand" href="{{ route('home') }}">Conference System</a>
+<body class="hold-transition layout-top-nav">
+<div class="wrapper">
 
-        <ul class="navbar-nav ms-auto">
-            <li class="nav-item me-3">
-                <button class="btn btn-outline-secondary" disabled>Logout</button>
-            </li>
-            <li class="nav-item">
-                <span class="navbar-text">
-                    Dmitrij Testuser
-                </span>
-            </li>
-        </ul>
-    </div>
-</nav>
+  <!-- Main Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+      <div class="container">
 
-<div class="container">
-    @if(session('success'))
-        <div class="alert alert-success">{{ session('success') }}</div>
-    @endif
+          <a href="{{ route('home') }}" class="navbar-brand">
+              <span class="brand-text font-weight-light">Conference System</span>
+          </a>
 
-    @if(session('error'))
-        <div class="alert alert-danger">{{ session('error') }}</div>
-    @endif
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <span class="nav-link">Dmitrij Testuser</span>
+              </li>
+              <li class="nav-item">
+                  <button class="btn btn-secondary" disabled>Atsijungti</button>
+              </li>
+          </ul>
 
-    @yield('content')
+      </div>
+  </nav>
+
+  <div class="content-wrapper">
+      <div class="content">
+          <div class="container pt-4">
+
+              @yield('content')
+
+          </div>
+      </div>
+  </div>
+
+  <footer class="main-footer text-center">
+      <strong>Conference System © {{ date('Y') }}</strong>
+  </footer>
+
 </div>
-
-<script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>

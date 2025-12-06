@@ -1,6 +1,142 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~admin-lte/dist/css/adminlte.min.css";
 
 /* Custom styles */
+
 body {
-    padding-bottom: 40px;
+    background: #f3f4f6;
+}
+
+.main-navbar {
+    background: linear-gradient(90deg, #0d6efd, #6610f2);
+}
+
+.logo-icon {
+    font-size: 1.3rem;
+    margin-right: 0.3rem;
+}
+
+.user-name {
+    font-weight: 500;
+}
+
+.page-content {
+    min-height: 70vh;
+}
+
+/* Hero korta */
+
+.hero-card {
+    background: linear-gradient(135deg, #0d6efd, #6610f2);
+    color: #fff;
+    border-radius: 1.5rem;
+    padding: 2rem 2.5rem;
+}
+
+.hero-title {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: 1.05rem;
+    opacity: 0.9;
+}
+
+.hero-badge {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 1.25rem;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.hero-badge-title {
+    display: block;
+    font-weight: 600;
+}
+
+.hero-badge-subtitle {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+/* Info kortos */
+
+.info-card {
+    background: #ffffff;
+    border-radius: 1rem;
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+.info-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Konferencijų kortelės */
+
+.conference-card {
+    background: #ffffff;
+    border-radius: 1rem;
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+    border: 1px solid #e5e7eb;
+}
+
+.conference-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.conference-meta {
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+.conference-meta .icon {
+    margin-right: 0.3rem;
+}
+
+/* Detalės */
+
+.conference-detail-card {
+    background: #ffffff;
+    border-radius: 1rem;
+    padding: 1.75rem;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+/* Admin kortos */
+
+.admin-card {
+    display: block;
+    background: #ffffff;
+    border-radius: 1rem;
+    padding: 1.5rem 1.75rem;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #e5e7eb;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.admin-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 35px rgba(15, 23, 42, 0.12);
+    border-color: #0d6efd;
+}
+
+/* Antraštės */
+
+.section-title {
+    font-weight: 700;
+}
+
+/* Footeris */
+
+.main-footer {
+    background: #ffffff;
+    border-top: 1px solid #e5e7eb;
 }
