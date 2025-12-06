@@ -1,5 +1,4 @@
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-    <!-- Kairė – burgeris sidebarui -->
     <ul class="navbar-nav">
         <li class="nav-item">
             <a class="nav-link" data-widget="pushmenu" href="#" role="button">
@@ -10,8 +9,6 @@
             <a href="{{ route('home') }}" class="nav-link">Pradžia</a>
         </li>
     </ul>
-
-    <!-- Dešinė pusė -->
     <ul class="navbar-nav ml-auto">
         <li class="nav-item mr-3">
             {{-- Logout turi būti disabled pagal užduotį --}}

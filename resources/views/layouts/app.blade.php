@@ -12,8 +12,6 @@
 </head>
 <body class="hold-transition layout-top-nav">
 <div class="wrapper">
-
-  <!-- Main Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
       <div class="container">
 
