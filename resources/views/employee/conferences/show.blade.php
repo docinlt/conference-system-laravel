@@ -20,7 +20,7 @@
         <tr>
             <th>{{ __('messages.first_name') }}</th>
             <th>{{ __('messages.last_name') }}</th>
-            <th>Email</th>
+            <th>{{ __('messages.email') }}</th>
         </tr>
         </thead>
         <tbody>

@@ -3,7 +3,7 @@
 @section('title', 'Conferences management')
 
 @section('content')
-    <h1>Conferences management</h1>
+    <h1>{{ __('messages.conferences_management') }}</h1>
 
     <a href="{{ route('admin.conferences.create') }}" class="btn btn-success mb-3">
         {{ __('messages.create_conference') }}

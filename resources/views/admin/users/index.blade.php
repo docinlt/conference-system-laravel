@@ -3,15 +3,15 @@
 @section('title', 'Users')
 
 @section('content')
-    <h1>System users</h1>
+    <h1>{{ __('messages.system_users') }}</h1>
 
     <table class="table">
         <thead>
         <tr>
-            <th>First name</th>
-            <th>Last name</th>
-            <th>Email</th>
-            <th>Role</th>
+            <th>{{ __('messages.first_name') }}</th>
+            <th>{{ __('messages.last_name') }}</th>
+            <th>{{ __('messages.email') }}</th>
+            <th>{{ __('messages.role') }}</th>
             <th></th>
         </tr>
         </thead>
@@ -30,7 +30,7 @@
             </tr>
         @empty
             <tr>
-                <td colspan="5">No users.</td>
+                <td colspan="5">{{ __('messages.no_users') }}</td>
             </tr>
         @endforelse
         </tbody>

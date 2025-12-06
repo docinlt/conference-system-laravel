@@ -45,6 +45,8 @@ return [
     'no_registered_clients' => 'Nėra užsiregistravusių klientų.',
     'no_conferences' => 'Konferencijų nėra.',
     'no_users' => 'Naudotojų nėra.',
+    'email' => 'El. paštas',
+    'role' => 'Rolė',
 
     'delete_confirm' => 'Ar tikrai norite ištrinti?',
 ];
