@@ -40,7 +40,7 @@
             </tr>
         @empty
             <tr>
-                <td colspan="4">No conferences.</td>
+                <td colspan="4">{{ __('messages.no_conferences')}}</td>
             </tr>
         @endforelse
         </tbody>

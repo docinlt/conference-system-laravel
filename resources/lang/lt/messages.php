@@ -28,4 +28,23 @@ return [
 
     'first_name' => 'Vardas',
     'last_name'  => 'Pavardė',
+
+    'student_info' => 'Studento informacija',
+    'subsystems' => 'Posistemiai',
+    'client_subsystem' => 'Kliento posistemis',
+    'employee_subsystem' => 'Darbuotojo posistemis',
+    'admin_subsystem' => 'Administratoriaus posistemis',
+
+    'system_users' => 'Sistemos naudotojai',
+    'edit_user' => 'Redaguoti naudotoją',
+    'users_management' => 'Naudotojų valdymas',
+
+    'conferences_management' => 'Konferencijų valdymas',
+    'all_conferences' => 'Visos konferencijos (įvykusios ir būsimos)',
+    'registered_clients' => 'Užsiregistravę klientai',
+    'no_registered_clients' => 'Nėra užsiregistravusių klientų.',
+    'no_conferences' => 'Konferencijų nėra.',
+    'no_users' => 'Naudotojų nėra.',
+
+    'delete_confirm' => 'Ar tikrai norite ištrinti?',
 ];

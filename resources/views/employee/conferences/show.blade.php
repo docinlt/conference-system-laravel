@@ -13,13 +13,13 @@
 
     <hr>
 
-    <h2>Registered clients</h2>
+    <h2>{{ __('messages.registered_clients') }}</h2>
 
     <table class="table">
         <thead>
         <tr>
-            <th>First name</th>
-            <th>Last name</th>
+            <th>{{ __('messages.first_name') }}</th>
+            <th>{{ __('messages.last_name') }}</th>
             <th>Email</th>
         </tr>
         </thead>
@@ -32,7 +32,7 @@
             </tr>
         @empty
             <tr>
-                <td colspan="3">No registered clients.</td>
+                <td colspan="3">{{ __('messages.no_registered_clients') }}</td>
             </tr>
         @endforelse
         </tbody>
