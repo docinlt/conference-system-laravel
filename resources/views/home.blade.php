@@ -13,11 +13,24 @@
             <hr>
 
             <h4>Posistemiai</h4>
-            <ul>
-                <li><a href="{{ route('client.conferences.index') }}">Kliento posistemis</a></li>
-                <li><a href="{{ route('employee.conferences.index') }}">Darbuotojo posistemis</a></li>
-                <li><a href="{{ route('admin.dashboard') }}">Administratoriaus posistemis</a></li>
-            </ul>
+           @auth
+                @if(auth()->user()->role === 'client')
+                    <a href="{{ route('client.conferences.index') }}">{{ __('messages.client_subsystem') }}</a>
+                @endif
+
+                @if(auth()->user()->role === 'employee')
+                    <a href="{{ route('employee.conferences.index') }}">Employee subsystem</a>
+                @endif
+
+                @if(auth()->user()->role === 'admin')
+                    <a href="{{ route('admin.dashboard') }}">Administrator subsystem</a>
+                @endif
+            @endauth
+
+            @guest
+                <a href="{{ route('login') }}">{{ __('messages.login') }}</a>
+                <a href="{{ route('register') }}">{{ __('messages.register') }}</a>
+            @endguest
         </div>
     </div>
 @endsection

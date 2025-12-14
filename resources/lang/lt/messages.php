@@ -48,5 +48,17 @@ return [
     'email' => 'El. paštas',
     'role' => 'Rolė',
 
-    'delete_confirm' => 'Ar tikrai norite ištrinti?',
+    'email' => 'El. paštas',
+    'role' => 'Vaidmuo',
+    'client' => 'Klientas',
+    'employee' => 'Darbuotojas',
+    'admin' => 'Administratorius',
+
+    'login' => 'Prisijungimas',
+    'register' => 'Registracija',
+    'password' => 'Slaptažodis',
+    'password_confirm' => 'Pakartokite slaptažodį',
+    'logout' => 'Atsijungti',
+
+    'invalid_credentials' => 'Neteisingas el. paštas arba slaptažodis.',
 ];

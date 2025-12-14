@@ -25,6 +25,10 @@ class Conference extends Model
     {
         return $this->hasMany(Registration::class);
     }
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'users_conferences')->withTimestamps();
+    }
 }
 
 ?>

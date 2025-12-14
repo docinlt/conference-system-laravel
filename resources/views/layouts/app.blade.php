@@ -24,7 +24,17 @@
                   <span class="nav-link">Dmitrij Testuser</span>
               </li>
               <li class="nav-item">
-                  <button class="btn btn-secondary" disabled>Atsijungti</button>
+                  @auth
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button class="btn btn-outline-secondary">Logout</button>
+                    </form>
+                    @endauth
+
+
+                    @guest
+                    <button class="btn btn-outline-secondary" disabled>Logout</button>
+                    @endguest
               </li>
           </ul>
 

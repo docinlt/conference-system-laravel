@@ -13,6 +13,7 @@ class User extends Authenticatable
     use HasFactory, Notifiable;
 
     protected $fillable = [
+        'name',
         'first_name',
         'last_name',
         'email',
@@ -34,5 +35,20 @@ class User extends Authenticatable
     {
         return "{$this->first_name} {$this->last_name}";
     }
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class, 'users_roles');
+    }
+
+    public function hasRole(string $roleName): bool
+    {
+        return $this->roles()->where('name', $roleName)->exists();
+    }
+
+    public function conferences()
+    {
+        return $this->belongsToMany(Conference::class, 'users_conferences')->withTimestamps();
+    }
+
 }
 
