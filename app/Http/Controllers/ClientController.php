@@ -6,6 +6,7 @@ use App\Models\Conference;
 use App\Models\Registration;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ClientController extends Controller
 {
@@ -21,24 +22,28 @@ class ClientController extends Controller
         return view('client.conferences.show', compact('conference'));
     }
 
-    public function register(Request $request, Conference $conference)
+    public function register(Conference $conference)
     {
-        // Demo variantas: paimame pirma client naudotoją
-        $user = User::where('role', 'client')->first();
+        $user = Auth::user();
+        if ($user->role !== 'client') {
+            abort(403);
+        }
+        if ($conference->date < now()->toDateString()) {
+            return back()->with('error', __('messages.cannot_register_past_conference'));
+        }
+        $alreadyRegistered = Registration::where('user_id', $user->id)
+            ->where('conference_id', $conference->id)
+            ->exists();
 
-        if (! $user) {
-            return redirect()
-                ->route('client.conferences.show', $conference)
-                ->with('error', __('messages.no_client_user'));
+        if ($alreadyRegistered) {
+            return back()->with('error', __('messages.already_registered'));
         }
 
-        Registration::firstOrCreate([
+        Registration::create([
             'user_id' => $user->id,
             'conference_id' => $conference->id,
         ]);
 
-        return redirect()
-            ->route('client.conferences.show', $conference)
-            ->with('success', __('messages.registered_successfully'));
+        return back()->with('success', __('messages.registered_successfully'));
     }
 }

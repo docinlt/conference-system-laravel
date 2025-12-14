@@ -25,13 +25,25 @@
 
                 <h5>Aprašymas</h5>
                 <p>{{ $conference->description }}</p>
-
-                <form action="{{ route('client.conferences.register', $conference) }}" method="POST" class="mt-4">
-                    @csrf
-                    <button type="submit" class="btn btn-success">
-                        Registruotis į konferenciją
+                @php
+                    $isRegistered = auth()->check()
+                        ? \App\Models\Registration::where('user_id', auth()->id())
+                            ->where('conference_id', $conference->id)
+                            ->exists()
+                        : false;
+                @endphp
+                @if($isRegistered)
+                    <button class="btn btn-secondary mt-3" disabled>
+                        {{ __('messages.already_registered_button') }}
                     </button>
-                </form>
+                @else
+                    <form action="{{ route('client.conferences.register', $conference) }}" method="POST">
+                        @csrf
+                        <button type="submit" class="btn btn-success mt-3">
+                            {{ __('messages.register_to_conference') }}
+                        </button>
+                    </form>
+                @endif
             </div>
         </div>
     </div>

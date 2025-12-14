@@ -21,19 +21,23 @@
 
           <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                  <span class="nav-link">Dmitrij Testuser</span>
-              </li>
-              <li class="nav-item">
                   @auth
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-                        <button class="btn btn-outline-secondary">Logout</button>
-                    </form>
+                        <span class="navbar-text me-3">
+                            {{ auth()->user()->first_name }} {{ auth()->user()->last_name }}
+                        </span>
+
+                        <form action="{{ route('logout') }}" method="POST" class="d-inline">
+                            @csrf
+                            <button type="submit" class="btn btn-danger">
+                                {{ __('messages.logout') }}
+                            </button>
+                        </form>
                     @endauth
 
 
                     @guest
-                    <button class="btn btn-outline-secondary" disabled>Logout</button>
+                        <a class="btn btn-outline-primary me-2" href="{{ route('login') }}">{{ __('messages.login') }}</a>
+                        <a class="btn btn-primary" href="{{ route('register') }}">{{ __('messages.register') }}</a>
                     @endguest
               </li>
           </ul>

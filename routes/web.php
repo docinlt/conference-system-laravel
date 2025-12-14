@@ -8,12 +8,10 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ConferenceController;
 
-// HOME (kad nebūtų 404)
 Route::get('/', function () {
     return view('home');
 })->name('home');
 
-// AUTH
 Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
 Route::post('/register', [AuthController::class, 'register'])->name('register.store');
 
@@ -22,7 +20,6 @@ Route::post('/login', [AuthController::class, 'login'])->name('login.store');
 
 Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
 
-// Universal dashboard (jei layout’e kvieti route('dashboard'))
 Route::get('/dashboard', function () {
     $role = auth()->user()->role;
 
@@ -34,21 +31,17 @@ Route::get('/dashboard', function () {
     };
 })->middleware('auth')->name('dashboard');
 
-
-// CLIENT (su role middleware)
 Route::middleware(['auth', 'role:client'])->prefix('client')->name('client.')->group(function () {
     Route::get('/conferences', [ClientController::class, 'index'])->name('conferences.index');
     Route::get('/conferences/{conference}', [ClientController::class, 'show'])->name('conferences.show');
     Route::post('/conferences/{conference}/register', [ClientController::class, 'register'])->name('conferences.register');
 });
 
-// EMPLOYEE
 Route::middleware(['auth', 'role:employee'])->prefix('employee')->name('employee.')->group(function () {
     Route::get('/conferences', [EmployeeController::class, 'index'])->name('conferences.index');
     Route::get('/conferences/{conference}', [EmployeeController::class, 'show'])->name('conferences.show');
 });
 
-// ADMIN
 Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 

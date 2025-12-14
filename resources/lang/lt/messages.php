@@ -57,8 +57,15 @@ return [
     'login' => 'Prisijungimas',
     'register' => 'Registracija',
     'password' => 'Slaptažodis',
-    'password_confirm' => 'Pakartokite slaptažodį',
+    'password_confirmation' => 'Pakartokite slaptažodį',
     'logout' => 'Atsijungti',
 
     'invalid_credentials' => 'Neteisingas el. paštas arba slaptažodis.',
+    'role_client' => 'Klientas',
+    'role_employee' => 'Darbuotojas',
+    'role_admin' => 'Administratorius',
+    'already_registered' => 'Jūs jau esate užsiregistravęs į šią konferenciją.',
+    'already_registered_button' => 'Jūs jau užsiregistravote',
+    'register_to_conference' => 'Registruotis į konferenciją',
+    'cannot_register_past_conference' => 'Negalima registruotis į jau įvykusią konferenciją.',
 ];

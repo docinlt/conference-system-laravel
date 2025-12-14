@@ -6,9 +6,15 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            <h3>Studento informacija</h3>
-            <p>Vardas: Dmitrij</p>
-            <p>Grupė: [1111]</p>
+            <h3>Naudotojo informacija</h3>
+
+            @auth
+                <p><strong>Vardas, pavardė:</strong> {{ auth()->user()->first_name }} {{ auth()->user()->last_name }}</p>
+                <p><strong>El. paštas:</strong> {{ auth()->user()->email }}</p>
+                <p><strong>Vaidmuo:</strong> {{ __('messages.role_' . auth()->user()->role) }}</p>
+            @else
+                <p>Neprisijungęs naudotojas</p>
+            @endauth
 
             <hr>
 
@@ -19,11 +25,11 @@
                 @endif
 
                 @if(auth()->user()->role === 'employee')
-                    <a href="{{ route('employee.conferences.index') }}">Employee subsystem</a>
+                    <a href="{{ route('employee.conferences.index') }}">{{ __('messages.employee_subsystem') }}</a>
                 @endif
 
                 @if(auth()->user()->role === 'admin')
-                    <a href="{{ route('admin.dashboard') }}">Administrator subsystem</a>
+                    <a href="{{ route('admin.dashboard') }}">{{ __('messages.admin_subsystem') }}</a>
                 @endif
             @endauth
 
