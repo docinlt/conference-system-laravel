@@ -3,6 +3,7 @@
 @section('title', $conference->title)
 
 @section('content')
+    <a href="{{ route('client.conferences.index') }}" class="btn btn-outline-secondary mb-3">← {{ __('messages.back_to_list') }}</a>
     <div class="row">
         <div class="col-lg-8">
             <div class="conference-detail-card">

@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <title>@yield('title', 'Konferencijų sistema')</title>
 
-    {{-- AdminLTE CSS (su Bootstrap) --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
-
-    {{-- Tavo kompiliuotas CSS (jei reikia papildomų stilių) --}}
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    
 </head>
 <body class="hold-transition layout-top-nav">
 <div class="wrapper">
