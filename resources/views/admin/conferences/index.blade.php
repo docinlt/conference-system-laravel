@@ -3,6 +3,7 @@
 @section('title', 'Conferences management')
 
 @section('content')
+    <a href="{{ route('admin.dashboard') }}" class="btn btn-outline-secondary mb-3">← {{ __('messages.back') }}</a>
     <h1>{{ __('messages.conferences_management') }}</h1>
 
     <a href="{{ route('admin.conferences.create') }}" class="btn btn-success mb-3">

@@ -3,6 +3,7 @@
 @section('title', 'Edit user')
 
 @section('content')
+    <a href="{{ route('admin.users.index') }}" class="btn btn-outline-secondary mb-3">← {{ __('messages.back_to_list') }}</a>
     <h1>Edit user</h1>
 
     <form action="{{ route('admin.users.update', $user) }}" method="POST">

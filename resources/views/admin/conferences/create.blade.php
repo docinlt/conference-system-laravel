@@ -3,6 +3,7 @@
 @section('title', __('messages.create_conference'))
 
 @section('content')
+    <a href="{{ route('admin.conferences.index') }}" class="btn btn-outline-secondary mb-3">← {{ __('messages.back_to_list') }}</a>
     <h1>{{ __('messages.create_conference') }}</h1>
 
     <form action="{{ route('admin.conferences.store') }}" method="POST">

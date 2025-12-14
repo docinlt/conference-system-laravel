@@ -3,6 +3,7 @@
 @section('title', 'Users')
 
 @section('content')
+    <a href="{{ route('admin.dashboard') }}" class="btn btn-outline-secondary mb-3">← {{ __('messages.back') }}</a>
     <h1>{{ __('messages.system_users') }}</h1>
 
     <table class="table">

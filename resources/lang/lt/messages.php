@@ -68,4 +68,6 @@ return [
     'already_registered_button' => 'Jūs jau užsiregistravote',
     'register_to_conference' => 'Registruotis į konferenciją',
     'cannot_register_past_conference' => 'Negalima registruotis į jau įvykusią konferenciją.',
+    'back' => 'Grįžti atgal',
+    'back_to_list' => 'Atgal į sąrašą',
 ];
