@@ -29,6 +29,12 @@ class Conference extends Model
     {
         return $this->belongsToMany(User::class, 'users_conferences')->withTimestamps();
     }
+    public function isPast(): bool
+    {
+        $startsAt = \Carbon\Carbon::parse($this->date->format('Y-m-d') . ' ' . $this->time);
+        return $startsAt->isPast();
+    }
+
 }
 
 ?>

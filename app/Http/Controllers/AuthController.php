@@ -33,7 +33,7 @@ class AuthController extends Controller
             'last_name'  => $data['last_name'],
             'email'      => $data['email'],
             'password'   => Hash::make($data['password']),
-            'role'       => 'client', // 🔴 SVARBU – pagal SD2
+            'role'       => 'client',
         ]);
 
         Auth::login($user);

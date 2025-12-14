@@ -5,7 +5,6 @@
     <title>@yield('title', 'Konferencijų sistema')</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
-    
 </head>
 <body class="hold-transition layout-top-nav">
 <div class="wrapper">
@@ -15,6 +14,40 @@
           <a href="{{ route('home') }}" class="navbar-brand">
               <span class="brand-text font-weight-light">Conference System</span>
           </a>
+
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                @auth
+                    @if(auth()->user()->role === 'client')
+                        <li class="nav-item">
+                            <a class="btn btn-outline-primary btn-sm"
+                            href="{{ route('client.conferences.index') }}">
+                                {{ __('messages.client_subsystem') }}
+                            </a>
+                        </li>
+                    @endif
+
+                    @if(auth()->user()->role === 'employee')
+                        <li class="nav-item">
+                            <a class="btn btn-outline-warning btn-sm"
+                            href="{{ route('employee.conferences.index') }}">
+                                {{ __('messages.employee_subsystem') }}
+                            </a>
+                        </li>
+                    @endif
+
+                    @if(auth()->user()->role === 'admin')
+                        <li class="nav-item">
+                            <a class="btn btn-outline-danger btn-sm"
+                            href="{{ route('admin.dashboard') }}">
+                                {{ __('messages.admin_subsystem') }}
+                            </a>
+                        </li>
+                    @endif
+                @endauth
+
+            </ul>
+
 
           <ul class="navbar-nav ml-auto">
               <li class="nav-item">

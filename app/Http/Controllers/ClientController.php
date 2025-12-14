@@ -24,6 +24,11 @@ class ClientController extends Controller
 
     public function register(Conference $conference)
     {
+        if ($conference->isPast()) {
+            return redirect()
+                ->route('client.conferences.show', $conference)
+                ->with('error', __('messages.conference_registration_closed'));
+        }
         $user = Auth::user();
         if ($user->role !== 'client') {
             abort(403);

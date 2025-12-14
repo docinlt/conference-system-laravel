@@ -4,8 +4,8 @@
 
 @section('content')
     <a href="{{ route('client.conferences.index') }}" class="btn btn-outline-secondary mb-3">← {{ __('messages.back_to_list') }}</a>
-    <div class="row">
-        <div class="col-lg-8">
+    <div class="row text-center">
+        <div class="col-lg-12">
             <div class="conference-detail-card">
                 <h2 class="mb-3">{{ $conference->title }}</h2>
 
@@ -36,6 +36,14 @@
                 @if($isRegistered)
                     <button class="btn btn-secondary mt-3" disabled>
                         {{ __('messages.already_registered_button') }}
+                    </button>
+                @elseif($conference->isPast())
+                    <div class="alert alert-warning">
+                        {{ __('messages.conference_registration_closed') }}
+                    </div>
+
+                    <button class="btn btn-secondary mt-3" disabled>
+                        {{ __('messages.register') }}
                     </button>
                 @else
                     <form action="{{ route('client.conferences.register', $conference) }}" method="POST">
